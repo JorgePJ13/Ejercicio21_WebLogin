@@ -20,9 +20,10 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LoginServlet.
  */
-@WebServlet(urlPatterns = {"/LoginServlet"}, name = "LoginServlet")
+//cambiar a /usuarios/login
+@WebServlet(urlPatterns = {"/usuarios/login"})
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -61,6 +62,9 @@ public class LoginServlet extends HttpServlet {
 		String Usuario = request.getParameter("fName");
 		String Contrasenha = request.getParameter("password");
 
+		// Permitimos que nos llamen desde distintos dominios
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		
 		Usuario user = userDao.get(Usuario); // Busca al usuario en la base de datos
 
 		if (user != null) {

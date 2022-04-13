@@ -16,7 +16,7 @@
 			<div id="loginText">
 				<h4>Iniciar Sesión</h4>
 			</div>
-			<form method="get" action="LoginServlet">
+			<form method="post" action="LoginServlet">
 				<fieldset id="loginForm">
 					<legend> Introducir Credenciales</legend>
 					<div id="usuario">
